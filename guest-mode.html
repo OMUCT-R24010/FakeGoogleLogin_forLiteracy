@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ゲストモードについて - Google アカウント</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.nerdfonts.com/assets/css/webfont.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', 'Noto Sans', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #202124;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .icon {
+            font-size: 64px;
+            color: #1a73e8;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #1a73e8;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #5f6368;
+            font-size: 16px;
+        }
+
+        .content {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #202124;
+            font-size: 24px;
+            margin: 30px 0 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2 i {
+            color: #1a73e8;
+            font-size: 28px;
+        }
+
+        p {
+            color: #5f6368;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .info-box {
+            background: #e8f0fe;
+            border-left: 4px solid #1a73e8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .info-box h3 {
+            color: #1a73e8;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-list li i {
+            position: absolute;
+            left: 0;
+            top: 12px;
+            color: #34a853;
+            font-size: 20px;
+        }
+
+        .steps {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .steps h3 {
+            color: #202124;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 15px;
+            margin: 15px 0;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background: #1a73e8;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ff9800;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .warning h3 {
+            color: #ff9800;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .warning h3 i {
+            font-size: 24px;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .back-link a {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="icon">
+                <i class="nf nf-fa-user_secret"></i>
+            </div>
+            <h1>ゲストモード（シークレットモード）について</h1>
+            <p class="subtitle">共有パソコンで安全にブラウジングする方法</p>
+        </div>
+
+        <div class="content">
+            <h2><i class="nf nf-fa-question_circle"></i> ゲストモードとは？</h2>
+            <p>
+                ゲストモード（またはシークレットモード、プライベートブラウジング）は、ブラウザの閲覧履歴やCookie、
+                キャッシュなどをコンピューターに保存せずにウェブサイトを閲覧できる機能です。
+            </p>
+
+            <div class="info-box">
+                <h3><i class="nf nf-fa-shield"></i> 主な特徴</h3>
+                <ul class="feature-list">
+                    <li><i class="nf nf-fa-check"></i> 閲覧履歴が保存されない</li>
+                    <li><i class="nf nf-fa-check"></i> Cookieとサイトデータがウィンドウを閉じると削除される</li>
+                    <li><i class="nf nf-fa-check"></i> フォームに入力した情報が保存されない</li>
+                    <li><i class="nf nf-fa-check"></i> パスワードが保存されない</li>
+                    <li><i class="nf nf-fa-check"></i> ダウンロード履歴が残らない</li>
+                </ul>
+            </div>
+
+            <h2><i class="nf nf-fa-laptop"></i> いつ使うべき？</h2>
+            <p>以下のような場合にゲストモードの使用をお勧めします：</p>
+            <ul class="feature-list">
+                <li><i class="nf nf-fa-users"></i> 共有パソコンや公共のコンピューターを使用する時</li>
+                <li><i class="nf nf-fa-coffee"></i> インターネットカフェや図書館のパソコンを使用する時</li>
+                <li><i class="nf nf-fa-building"></i> 友人や家族のパソコンを一時的に借りる時</li>
+                <li><i class="nf nf-fa-briefcase"></i> 職場の共有端末でプライベートな情報を確認する時</li>
+            </ul>
+
+            <h2><i class="nf nf-fa-rocket"></i> 起動方法</h2>
+            <div class="steps">
+                <h3>各ブラウザでの開き方</h3>
+                
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div>
+                        <strong>Google Chrome</strong><br>
+                        Ctrl + Shift + N (Windows/Linux) または Cmd + Shift + N (Mac)
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div>
+                        <strong>Microsoft Edge</strong><br>
+                        Ctrl + Shift + N (Windows/Linux) または Cmd + Shift + N (Mac)
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div>
+                        <strong>Firefox</strong><br>
+                        Ctrl + Shift + P (Windows/Linux) または Cmd + Shift + P (Mac)
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <div>
+                        <strong>Safari</strong><br>
+                        Cmd + Shift + N (Mac)
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning">
+                <h3><i class="nf nf-fa-exclamation_triangle"></i> 注意事項</h3>
+                <p>
+                    <strong>ゲストモードは完全な匿名性を保証するものではありません：</strong>
+                </p>
+                <ul class="feature-list">
+                    <li><i class="nf nf-fa-times"></i> インターネットサービスプロバイダーには閲覧履歴が見える可能性があります</li>
+                    <li><i class="nf nf-fa-times"></i> 企業や学校のネットワークでは管理者が閲覧内容を確認できます</li>
+                    <li><i class="nf nf-fa-times"></i> ウェブサイトにログインした場合、そのサイトには身元が分かります</li>
+                    <li><i class="nf nf-fa-times"></i> ダウンロードしたファイルはパソコンに残ります</li>
+                    <li><i class="nf nf-fa-times"></i> ブックマークは保存されます</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3><i class="nf nf-fa-lightbulb_o"></i> 推奨事項</h3>
+                <p>
+                    より安全にオンラインアカウントを使用するために：
+                </p>
+                <ul class="feature-list">
+                    <li><i class="nf nf-fa-check"></i> 使用後は必ずログアウトする</li>
+                    <li><i class="nf nf-fa-check"></i> 公共のパソコンでは必ずゲストモードを使用する</li>
+                    <li><i class="nf nf-fa-check"></i> 重要な情報を入力する前にURLを確認する</li>
+                    <li><i class="nf nf-fa-check"></i> 二段階認証を有効にする</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="back-link">
+            <a href="javascript:window.close()"><i class="nf nf-fa-arrow_left"></i> このウィンドウを閉じる</a>
+        </div>
+    </div>
+</body>
+</html>
