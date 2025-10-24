@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ヘルプ - フィッシング詐欺から身を守る</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.nerdfonts.com/assets/css/webfont.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', 'Noto Sans', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #202124;
+            line-height: 1.6;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #1a73e8;
+        }
+
+        .icon {
+            font-size: 80px;
+            color: #1a73e8;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #1a73e8;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            color: #5f6368;
+            font-size: 18px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #202124;
+            font-size: 26px;
+            margin: 30px 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        h2 i {
+            color: #1a73e8;
+            font-size: 32px;
+        }
+
+        h3 {
+            color: #202124;
+            font-size: 20px;
+            margin: 20px 0 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3 i {
+            color: #34a853;
+            font-size: 24px;
+        }
+
+        p {
+            color: #5f6368;
+            margin-bottom: 15px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .qa-item {
+            background: #f8f9fa;
+            border-left: 4px solid #1a73e8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .qa-item h3 {
+            color: #1a73e8;
+            margin-bottom: 10px;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ff9800;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .warning-box h3 {
+            color: #ff9800;
+        }
+
+        .danger-box {
+            background: #ffebee;
+            border-left: 4px solid #d32f2f;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .danger-box h3 {
+            color: #d32f2f;
+        }
+
+        .success-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .success-box h3 {
+            color: #4caf50;
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 12px 0 12px 40px;
+            position: relative;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .checklist li:last-child {
+            border-bottom: none;
+        }
+
+        .checklist li i {
+            position: absolute;
+            left: 0;
+            top: 12px;
+            font-size: 24px;
+        }
+
+        .checklist li.check i {
+            color: #34a853;
+        }
+
+        .checklist li.times i {
+            color: #d32f2f;
+        }
+
+        .example {
+            background: #f1f3f4;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .example-good {
+            background: #d4edda;
+            color: #155724;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 4px;
+            border-left: 4px solid #28a745;
+            font-family: 'Courier New', monospace;
+        }
+
+        .example-bad {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 4px;
+            border-left: 4px solid #dc3545;
+            font-family: 'Courier New', monospace;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .back-link a {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="icon">
+                <i class="nf nf-fa-life_ring"></i>
+            </div>
+            <h1>フィッシング詐欺対策ヘルプ</h1>
+            <p class="subtitle">安全にオンラインアカウントを守るための完全ガイド</p>
+        </div>
+
+        <div class="section">
+            <h2><i class="nf nf-fa-question_circle"></i> フィッシング詐欺とは？</h2>
+            <p>
+                フィッシング詐欺とは、本物そっくりの偽のウェブサイトやメールを使って、ユーザーの個人情報（パスワード、クレジットカード番号、銀行口座情報など）を盗み取ろうとする詐欺行為です。
+            </p>
+
+            <div class="danger-box">
+                <h3><i class="nf nf-fa-exclamation_triangle"></i> よくあるフィッシング詐欺の手口</h3>
+                <ul class="checklist">
+                    <li class="times"><i class="nf nf-fa-times"></i> 緊急性を装ったメール（「24時間以内にアカウントが削除されます」など）</li>
+                    <li class="times"><i class="nf nf-fa-times"></i> 公式そっくりの偽サイトへのリンク</li>
+                    <li class="times"><i class="nf nf-fa-times"></i> 添付ファイルを開かせようとする</li>
+                    <li class="times"><i class="nf nf-fa-times"></i> 個人情報の入力を求める</li>
+                    <li class="times"><i class="nf nf-fa-times"></i> 不自然な日本語や誤字脱字</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><i class="nf nf-fa-shield"></i> フィッシング詐欺から身を守る方法</h2>
+
+            <div class="qa-item">
+                <h3><i class="nf nf-fa-link"></i> 1. URLを必ず確認する</h3>
+                <p>ログインページにアクセスする前に、必ずアドレスバーのURLを確認してください。</p>
+                <div class="example-good">✅ 正しい例: https://accounts.google.com</div>
+                <div class="example-bad">❌ 間違い例: https://g00gle-login.com</div>
+                <div class="example-bad">❌ 間違い例: https://accounts-google.xyz</div>
+                <div class="example-bad">❌ 間違い例: http://accounts.google.com.phishing.com</div>
+            </div>
+
+            <div class="qa-item">
+                <h3><i class="nf nf-fa-lock"></i> 2. https:// とセキュリティ証明書を確認</h3>
+                <p>アドレスバーに鍵マークがあることを確認し、クリックして証明書の詳細を確認しましょう。</p>
+                <ul class="checklist">
+                    <li class="check"><i class="nf nf-fa-check"></i> URLが https:// で始まっている</li>
+                    <li class="check"><i class="nf nf-fa-check"></i> アドレスバーに鍵マークが表示されている</li>
+                    <li class="check"><i class="nf nf-fa-check"></i> 証明書の発行先が正しい企業名になっている</li>
+                </ul>
+            </div>
+
+            <div class="qa-item">
+                <h3><i class="nf nf-fa-envelope"></i> 3. メール内のリンクを直接クリックしない</h3>
+                <p>メールに記載されたリンクは直接クリックせず、公式サイトに自分でアクセスしてください。</p>
+            </div>
+
+            <div class="qa-item">
+                <h3><i class="nf nf-fa-bookmark"></i> 4. 公式サイトをブックマークする</h3>
+                <p>よく使うサイト（銀行、ショッピングサイトなど）は必ずブックマークし、そこからアクセスする習慣をつけましょう。</p>
+            </div>
+
+            <div class="qa-item">
+                <h3><i class="nf nf-fa-mobile"></i> 5. 二段階認証を設定する</h3>
+                <p>パスワードが漏れても、二段階認証があれば不正アクセスを防げます。これは最も効果的なセキュリティ対策です。</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><i class="nf nf-fa-lightbulb_o"></i> よくある質問</h2>
+
+            <div class="qa-item">
+                <h3>Q. フィッシングサイトと本物のサイトはどう見分ける?</h3>
+                <p><strong>A.</strong> 以下のポイントをチェックしてください：</p>
+                <ul class="checklist">
+                    <li class="check"><i class="nf nf-fa-check"></i> URLのドメインが正しいか（google.com、amazon.co.jp など）</li>
+                    <li class="check"><i class="nf nf-fa-check"></i> https:// で始まり、鍵マークがあるか</li>
+                    <li class="check"><i class="nf nf-fa-check"></i> デザインや文章に違和感がないか</li>
+                    <li class="check"><i class="nf nf-fa-check"></i> 不自然に個人情報を要求していないか</li>
+                </ul>
+            </div>
+
+            <div class="qa-item">
+                <h3>Q. フィッシングメールを受け取ったらどうすればいい?</h3>
+                <p><strong>A.</strong> 以下の対処をしてください：</p>
+                <ul class="checklist">
+                    <li class="check"><i class="nf nf-fa-check"></i> リンクをクリックしない</li>
+                    <li class="check"><i class="nf nf-fa-check"></i> 添付ファイルを開かない</li>
+                    <li class="check"><i class="nf nf-fa-check"></i> メールを削除する（または迷惑メールに分類）</li>
+                    <li class="check"><i class="nf nf-fa-check"></i> 本物のサイトに自分でアクセスして確認する</li>
+                </ul>
+            </div>
+
+            <div class="qa-item">
+                <h3>Q. すでにフィッシングサイトに情報を入力してしまった場合は?</h3>
+                <p><strong>A.</strong> すぐに以下の対応をしてください：</p>
+                <div class="danger-box">
+                    <ul class="checklist">
+                        <li class="times"><i class="nf nf-fa-exclamation"></i> 公式サイトでパスワードをすぐに変更する</li>
+                        <li class="times"><i class="nf nf-fa-exclamation"></i> 同じパスワードを使っている他のサイトも変更する</li>
+                        <li class="times"><i class="nf nf-fa-exclamation"></i> クレジットカード会社に連絡する（カード情報を入力した場合）</li>
+                        <li class="times"><i class="nf nf-fa-exclamation"></i> 二段階認証を設定する</li>
+                        <li class="times"><i class="nf nf-fa-exclamation"></i> アカウントの不正使用がないか確認する</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><i class="nf nf-fa-star"></i> セキュリティのベストプラクティス</h2>
+
+            <div class="success-box">
+                <h3><i class="nf nf-fa-check_circle"></i> 推奨するセキュリティ対策</h3>
+                <ul class="checklist">
+                    <li class="check"><i class="nf nf-fa-check"></i> <strong>強力なパスワード:</strong> 12文字以上、大小英字・数字・記号を組み合わせる</li>
+                    <li class="check"><i class="nf nf-fa-check"></i> <strong>パスワードマネージャー:</strong> 1Password、Bitwarden、LastPass などを使用</li>
+                    <li class="check"><i class="nf nf-fa-check"></i> <strong>二段階認証:</strong> すべての重要なアカウントで有効にする</li>
+                    <li class="check"><i class="nf nf-fa-check"></i> <strong>定期的な変更:</strong> 重要なパスワードは3〜6ヶ月ごとに変更</li>
+                    <li class="check"><i class="nf nf-fa-check"></i> <strong>使い回し禁止:</strong> サイトごとに異なるパスワードを使用</li>
+                    <li class="check"><i class="nf nf-fa-check"></i> <strong>アップデート:</strong> OSやブラウザを常に最新の状態に保つ</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><i class="nf nf-fa-phone"></i> 困ったときの連絡先</h2>
+            <div class="warning-box">
+                <h3><i class="nf nf-fa-info_circle"></i> 相談窓口</h3>
+                <ul class="checklist">
+                    <li class="check"><i class="nf nf-fa-check"></i> <strong>警察相談専用電話:</strong> #9110</li>
+                    <li class="check"><i class="nf nf-fa-check"></i> <strong>フィッシング対策協議会:</strong> https://www.antiphishing.jp/</li>
+                    <li class="check"><i class="nf nf-fa-check"></i> <strong>国民生活センター:</strong> 188（消費者ホットライン）</li>
+                    <li class="check"><i class="nf nf-fa-check"></i> <strong>各サービスの公式サポート:</strong> 各企業の公式サイトから確認</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="back-link">
+            <a href="javascript:window.close()">
+                <i class="nf nf-fa-arrow_left"></i>
+                このウィンドウを閉じる
+            </a>
+        </div>
+    </div>
+</body>
+</html>

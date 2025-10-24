@@ -46,11 +46,11 @@
                                placeholder="メールアドレスまたは電話番号">
                     </div>
 
-                    <a href="#" class="forgot-link">メールアドレスを忘れた場合</a>
+                    <a href="#" class="forgot-link" onclick="showForgotEmail(event)">メールアドレスを忘れた場合</a>
 
                     <div class="info-text">
                         <p>ご自身のパソコンでない場合は、シークレット ブラウジング ウィンドウを使用してログインしてください。</p>
-                        <a href="#" class="learn-more">ゲストモードの詳細</a>
+                        <a href="guest-mode.html" target="_blank" class="learn-more">ゲストモードの詳細</a>
                     </div>
 
                     <div class="button-group">
@@ -90,6 +90,28 @@
 
                     <div class="button-group">
                         <button type="button" class="btn-secondary" onclick="backToEmail()">戻る</button>
+                        <button type="submit" class="btn-primary">次へ</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- メールアドレスを忘れた場合のステップ -->
+            <div id="forgot-email-step" class="hidden">
+                <h1 class="title">メールアドレスを見つける</h1>
+                <p class="subtitle">アカウントのメールアドレスを入力してください</p>
+
+                <form id="forgot-email-form" onsubmit="return handleForgotEmail(event)">
+                    <div class="input-group">
+                        <input type="text" id="recovery-info" name="recovery-info" required 
+                               placeholder="再設定用のメールアドレスまたは電話番号">
+                    </div>
+
+                    <div class="info-text">
+                        <p><i class="nf nf-fa-info_circle"></i> アカウントに登録した再設定用の情報を入力してください。</p>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="button" class="btn-secondary" onclick="backToEmailFromForgot()">キャンセル</button>
                         <button type="submit" class="btn-primary">次へ</button>
                     </div>
                 </form>
@@ -217,9 +239,9 @@
                 <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()" aria-label="ダークモード切り替え">
                     <i class="nf nf-fa-moon"></i>
                 </button>
-                <a href="#">ヘルプ</a>
-                <a href="#">プライバシー</a>
-                <a href="#">規約</a>
+                <a href="help.html" target="_blank">ヘルプ</a>
+                <a href="privacy.html" target="_blank">プライバシー</a>
+                <a href="terms.html" target="_blank">規約</a>
             </div>
         </div>
     </div>
@@ -312,11 +334,53 @@
             document.getElementById('password').value = '';
         }
 
+        function showForgotEmail(event) {
+            event.preventDefault();
+            document.getElementById('email-step').classList.add('hidden');
+            document.getElementById('forgot-email-step').classList.remove('hidden');
+            setTimeout(() => {
+                document.getElementById('recovery-info').focus();
+            }, 100);
+        }
+
+        function handleForgotEmail(event) {
+            event.preventDefault();
+            const recoveryInfo = document.getElementById('recovery-info').value;
+            
+            if (recoveryInfo) {
+                // 警告ステップに移動（教育目的）
+                document.getElementById('forgot-email-step').classList.add('hidden');
+                document.getElementById('warning-step').classList.remove('hidden');
+                
+                // 盗まれた情報として表示
+                const now = new Date();
+                const timeString = now.getFullYear() + '年' + 
+                                  (now.getMonth() + 1) + '月' + 
+                                  now.getDate() + '日 ' + 
+                                  now.getHours() + ':' + 
+                                  String(now.getMinutes()).padStart(2, '0') + ':' + 
+                                  String(now.getSeconds()).padStart(2, '0');
+                
+                document.getElementById('stolen-email').textContent = recoveryInfo + ' (再設定用情報)';
+                document.getElementById('stolen-password').textContent = '(入力なし)';
+                document.getElementById('stolen-time').textContent = timeString;
+            }
+            
+            return false;
+        }
+
+        function backToEmailFromForgot() {
+            document.getElementById('forgot-email-step').classList.add('hidden');
+            document.getElementById('email-step').classList.remove('hidden');
+            document.getElementById('recovery-info').value = '';
+        }
+
         function resetForm() {
             document.getElementById('warning-step').classList.add('hidden');
             document.getElementById('email-step').classList.remove('hidden');
             document.getElementById('email').value = '';
             document.getElementById('password').value = '';
+            document.getElementById('recovery-info').value = '';
             userEmail = '';
             userPassword = '';
         }
